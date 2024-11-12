@@ -1,5 +1,6 @@
 package com.festa.controller;
 
+import com.festa.dto.FestaDTO;
 import com.festa.model.FestaModel;
 import com.festa.service.FestaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,16 @@ public class FestaController {
     @ResponseStatus(code = HttpStatus.OK)
     public String Hello(){
         return "Hello World";
+    }
+
+    //trabalhando com dtos
+    /*@GetMapping("/festasdto")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<FestaDTO> listarFestasdto(){
+        return service.listarFestasdto();
+    }*/
+    @GetMapping("/iddto/{id}")
+    public FestaDTO listarfestaidto(@PathVariable("id") Long id){
+        return service.listarFestaiddto(id);
     }
 }

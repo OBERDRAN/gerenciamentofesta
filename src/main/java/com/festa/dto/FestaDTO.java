@@ -25,11 +25,16 @@ public class FestaDTO {
         this.qtdePessoas = qtdePessoas;
     }
 
-
+    //construtor com argumentos
+    public FestaDTO(Long id, String nome, Integer qtdePessoas) {
+        Id = id;
+        this.nome = nome;
+        this.qtdePessoas = qtdePessoas;
+    }
     //converter em objeto festa
-     public FestaDTO(FestaModel festa){
-        this.Id = festa.getId();
-        this.nome = festa.getNome();
-        this.qtdePessoas = festa.getQtdePessoas();
+     public FestaDTO(FestaModel festamodel){
+        Id = festamodel.getId();
+        nome = festamodel.getNome();
+        qtdePessoas = festamodel.getQtdePessoas();
     }
 }

@@ -1,5 +1,6 @@
 package com.festa.service;
 
+import com.festa.dto.FestaDTO;
 import com.festa.model.FestaModel;
 import com.festa.repository.FestaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,13 @@ public class FestaService {
              return repository.findById(id);
          }
         return Optional.empty();
+    }
+
+    //trabalhando com dtos
+    public FestaDTO listarFestaiddto(Long id){
+        FestaModel festamodel = repository.findById(id).get();
+        //converter
+        FestaDTO festadto = new FestaDTO(festamodel);
+        return festadto;
     }
 }
